@@ -58,7 +58,7 @@ class CaseContactDecorator < Draper::Decorator
 
   def contact_types
     if object.contact_types.any?
-      object.contact_types&.map { |ct| ct.name }&.to_sentence(last_word_connector: ", and ")
+      object.contact_types.map { |ct| ct.name }&.to_sentence(last_word_connector: ", and ")
     else
       "No contact type specified"
     end

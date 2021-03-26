@@ -37,7 +37,7 @@ class CaseContactReport
     {
       internal_contact_number: case_contact&.id,
       duration_minutes: case_contact&.report_duration_minutes,
-      contact_types: case_contact&.report_contact_types,
+      contact_types: case_contact&.report_contact_types.includes([:case_contact_contact_type]),
       contact_made: case_contact&.report_contact_made,
       contact_medium: case_contact&.medium_type,
       occurred_at: I18n.l(case_contact&.occurred_at, format: :full, default: nil),
